@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/07 10:38:44 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/19 17:00:33 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,6 @@ t_list				*ft_lstnewstr(char *content, size_t content_size);
 void				ft_lstdellink(t_list *m);
 char				**ft_2Dstrnew(size_t size);
 char				***ft_3Dstrnew(size_t size);
+int					ft_2Dstrcmp(const char **s1, const char **s2);
+int					ft_3Dstrin(const char ***s1, const char ***s2);
 #endif
