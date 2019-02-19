@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: idris <idris@student.42.fr>                +#+  +:+       +#+         #
+#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/02/11 18:14:33 by idris            ###   ########.fr        #
+#    Updated: 2019/02/19 11:34:52 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
-SRC_NAME =  get_next_line.c ft_readtetris.c ft_erase_column.c\
+SRC_NAME = get_next_line.c ft_readtetris.c ft_erase_column.c\
 			ft_check.c main.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
