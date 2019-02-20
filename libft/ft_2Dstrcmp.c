@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_2Dstrcmp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:18:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/19 16:37:44 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/20 12:44:46 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_2Dstrcmp(const char **s1, const char **s2)
+int ft_2Dstrcmp(char **s1, char **s2)
 {
 	size_t i;
 

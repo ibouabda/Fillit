@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_3Dstrin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:38:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/19 16:59:43 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/20 12:44:28 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_2Dstrin(const char **s1, const char ***s2)
+int ft_2Dstrin(char **s1,char ***s2)
 {
 	size_t i;
 
@@ -25,7 +25,7 @@ int ft_2Dstrin(const char **s1, const char ***s2)
 	return(0);
 }
 
-int		ft_3Dstrin(const char ***s1, const char ***s2)
+int		ft_3Dstrin(char ***s1, char ***s2)
 {
 	size_t	i;
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/19 15:52:19 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/20 12:18:29 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_verif_line(char *line)
+int		ft_verif_line_check(char *line)
 {
 	int i;
 
@@ -26,7 +26,7 @@ int		ft_verif_line(char *line)
 	return (0);
 }
 
-int		ft_new_tetrim(char ***tet, size_t *ntet, char *let, size_t *y)
+int		ft_new_tetrim_check(char ***tet, size_t *ntet, char *let, size_t *y)
 {
 	if (*ntet >= 25)
 		return (0);
@@ -53,12 +53,12 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 	{
 		if (!line[0])
 		{
-			if (!(ft_new_tetrim(tetrim, &ntetrim, &letter, &y)))
+			if (!(ft_new_tetrim_check(tetrim, &ntetrim, &letter, &y)))
 				return (0);
 			get_next_line(fd, &line);
 		}
 		x = 0;
-		if (ft_verif_line(line))
+		if (ft_verif_line_check(line))
 			tetrim[ntetrim][y++] = line;
 	}
 	return (1);

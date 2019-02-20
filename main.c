@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:26:16 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/19 16:04:52 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/20 12:38:31 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ int main(int argc, char **argv)
 		return(0);
 	}
 	ft_erase_column(tetrim);
+	ft_erase_column(tetrim_check);
+	if (ft_check(tetrim, tetrim_check))
+	{
+		ft_putstr("Tetriminos non valide !");
+	}
 	while (tetrim[i])
 	{
 		while (tetrim[i][k])
