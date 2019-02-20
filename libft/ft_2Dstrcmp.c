@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_2Dstrcmp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:18:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/20 18:18:15 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/20 19:19:24 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int ft_2Dstrcmp(char **s1, char **s2)
 	i = 0;
 	while (s1[i])
 	{
+		printf("2Dstrcmp\n");
 		if (ft_strcmp(s1[i], s2[i]) != 0)
 			return (0);
 		i++;

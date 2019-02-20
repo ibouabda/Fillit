@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
+#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/02/20 18:13:55 by retounsi         ###   ########.fr        #
+#    Updated: 2019/02/20 18:59:37 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ $(NAME): $(OBJ_NAME)
 
 clean:
 	rm -f $(OBJ_NAME)
+
 fclean: clean
 	rm -f $(NAME)
 
