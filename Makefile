@@ -6,7 +6,7 @@
 #    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/02/20 12:48:36 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/02/20 16:53:59 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,13 @@ SRC_NAME = get_next_line.c ft_readtetris.c ft_erase_column.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-all: $(NAME)
+all: 
+	libft
+	$(NAME)
+
+libft:
+	cd ~/Documents/Fillit/libft
+	make
 
 $(NAME): $(OBJ_NAME)
 	$(CC) $(CFLAGS) -c $(SRC_NAME)

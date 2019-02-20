@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:26:16 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/20 12:38:31 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/20 15:52:07 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int main(int argc, char **argv)
 	}
 	ft_erase_column(tetrim);
 	ft_erase_column(tetrim_check);
-	if (ft_check(tetrim, tetrim_check))
+	if (ft_check(tetrim, tetrim_check) == 1)
 	{
-		ft_putstr("Tetriminos non valide !");
+		ft_putstr("Tetriminos non valide !\n\n");
 	}
 	while (tetrim[i])
 	{
