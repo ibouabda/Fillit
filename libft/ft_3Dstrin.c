@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_3Dstrin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:38:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/20 16:50:56 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/20 18:18:34 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int ft_2Dstrin(char **s1,char ***s2)
 {
@@ -35,8 +34,9 @@ int		ft_3Dstrin(char ***s1, char ***s2)
 	while (s1[i])
 	{
 		if(ft_2Dstrin(s1[i], s2) == 0)
-			return (1);
+			return (0);
 		i++;
 	}
-	return(0);
+
+	return(1);
 }
