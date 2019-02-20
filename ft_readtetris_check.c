@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_readtetris.c                                    :+:      :+:    :+:   */
+/*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/19 15:34:13 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/19 15:52:19 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_new_tetrim(char ***tet, size_t *ntet, char *let, size_t *y)
 	return (1);
 }
 
-int		ft_readtetris(int fd, char ***tetrim)
+int		ft_readtetris_check(int fd, char ***tetrim)
 {
 	char	*line;
 	size_t	x;
@@ -58,8 +58,6 @@ int		ft_readtetris(int fd, char ***tetrim)
 			get_next_line(fd, &line);
 		}
 		x = 0;
-		while (line[x++])
-			line[x - 1] = line[x - 1] == '#' ? letter : line[x - 1];
 		if (ft_verif_line(line))
 			tetrim[ntetrim][y++] = line;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:26:16 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/19 11:58:12 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/19 16:04:52 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,29 @@
 int main(int argc, char **argv)
 {
 	int fd;
+	int fd_check;
 	char ***tetrim;
+	char ***tetrim_check;
 	size_t i;
 	size_t k;
 
 	if (argc != 2)
 	{
-		ft_putstr("error arguments");
+		ft_putstr("Error Arguments\n");
 		return(0);
 	}
+	fd_check = open("library.fillit", O_RDONLY);
 	fd = open(argv[1], O_RDONLY);
 	i = 0;
 	k = 0;
 	tetrim = ft_3Dstrnew(26);
-	ft_readtetris(fd, tetrim);
+	tetrim_check = ft_3Dstrnew(19);
+	ft_readtetris_check(fd_check, tetrim_check);
+	if (!(ft_readtetris(fd, tetrim)))
+	{
+		ft_putendl("Error number of tetriminos");
+		return(0);
+	}
 	ft_erase_column(tetrim);
 	while (tetrim[i])
 	{
