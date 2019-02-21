@@ -6,7 +6,7 @@
 #    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/02/21 12:08:43 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/02/21 15:13:58 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(FSANITIZE_NAME): .libft $(OBJ_NAME)
 .libft:
 	make -C $(PATHFILE)
 
-$(NAME): $(OBJ_NAME)
+$(NAME): $(OBJ_NAME) libft/libft.a
 	$(CC) $(CFLAGS) -c $(SRC_NAME)
 	$(CC) -o $(NAME) $(OBJ_NAME) libft/libft.a
 
