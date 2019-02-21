@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 11:53:54 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/07 17:26:31 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/21 12:10:03 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_shift(char ***tetrim)
 	{
 		while (tetrim[ntetrim][y])
 		{
-			while (tetrim[ntetrim][y][x] == '\0' && x < 5)
+			while (tetrim[ntetrim][y][x] == '\0' && x < 4)
 			{
 				x++;
 			}

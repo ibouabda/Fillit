@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2Dstrcmp.c                                      :+:      :+:    :+:   */
+/*   ft_3Dputstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/19 16:18:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/21 10:32:08 by ibouabda         ###   ########.fr       */
+/*   Created: 2019/02/21 13:30:16 by ibouabda          #+#    #+#             */
+/*   Updated: 2019/02/21 13:33:54 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_2Dstrcmp(char **s1, char **s2)
+void	ft_3Dputstr(char ***tetrim)
 {
 	size_t i;
+	size_t k;
 
 	i = 0;
-	while (s1[i])
+	k = 0;
+	while (tetrim[i])
 	{
-		printf("2Dstrcmp\n");
-		if (ft_strcmp(s1[i], s2[i]) != 0)
-			return (0);
+		while (tetrim[i][k])
+		{
+			ft_putendl(tetrim[i][k]);
+			k++;
+		}
+		ft_putchar('\n');
+		k = 0;
 		i++;
 	}
-	return (1);
 }

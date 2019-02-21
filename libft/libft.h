@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/20 18:02:12 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/02/21 13:34:22 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,5 @@ char				**ft_2Dstrnew(size_t size);
 char				***ft_3Dstrnew(size_t size);
 int					ft_2Dstrcmp(char **s1, char **s2);
 int					ft_3Dstrin(char ***s1, char ***s2);
+void				ft_3Dputstr(char ***tetrim);
 #endif
