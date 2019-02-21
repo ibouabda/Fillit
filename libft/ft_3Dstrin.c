@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_3Dstrin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:38:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/21 16:23:26 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/21 16:32:35 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_2Dstrin(char **s1,char ***s2) //compare le tetrim avec la libtetrim
+int ft_2Dstrin(char **s1,char ***s2)
 {
 	size_t i;
 
