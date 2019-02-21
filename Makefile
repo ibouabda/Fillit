@@ -6,7 +6,7 @@
 #    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/02/21 15:13:58 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/02/21 16:15:51 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 PATHFILE = ./libft
 
-CC = gcc
+CC = gcc -g
 
 FSANITISE_NAME = fsanitize.out
 
