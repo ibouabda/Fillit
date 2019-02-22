@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/22 11:54:10 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/02/22 13:19:30 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,16 @@ int main(int argc, char **argv)
 	ft_readtetris_check(fd_check, tetrim_check);
 	if (!(ft_readtetris_check(fd, tetrim)))
 	{
-		ft_putendl("Error number of tetriminos");
+		ft_putendl("Not Valid File");
 		return (0);
 	}
 	ft_erase_column(tetrim);
 	ft_erase_column(tetrim_check);
-	ft_3Dputstr(tetrim);
 	if (!ft_check(tetrim, tetrim_check))
 	{
 		ft_putstr("Tetriminos non valide !\n");
 		return (0);
 	}
-	ft_3Dputstr(tetrim);
 	printf("tetrim : \n\n");
+	ft_3Dputstr(tetrim);
 }
