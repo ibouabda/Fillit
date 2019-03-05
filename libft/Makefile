@@ -6,7 +6,7 @@
 #    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 21:31:16 by ibouabda          #+#    #+#              #
-#    Updated: 2019/02/21 14:29:46 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/03/05 14:10:53 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ SRC_NAME = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isprint.c ft_isdigit.c \
 		ft_putstr.c ft_putnbr_fd.c ft_strcat.c ft_strclr.c ft_strchr.c ft_lstnewstr.c\
 		ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_strcmp.c ft_striter.c \
 		ft_striteri.c ft_strlen.c ft_strjoin.c ft_strlcat.c ft_strmap.c ft_isalnum.c \
-		ft_strncat.c ft_strncpy.c ft_strmapi.c ft_strncmp.c ft_strnequ.c ft_3Dstrnew.c\
+		ft_strncat.c ft_strncpy.c ft_strmapi.c ft_strncmp.c ft_strnequ.c ft_3dstrnew.c\
 		ft_strnew.c ft_strrchr.c ft_strnstr.c ft_strstr.c ft_strsub.c ft_isalpha.c \
-		ft_strtrim.c ft_tolower.c ft_toupper.c ft_lstlen.c ft_lstmanynew.c ft_2Dstrnew.c\
+		ft_strtrim.c ft_tolower.c ft_toupper.c ft_lstlen.c ft_lstmanynew.c ft_2dstrnew.c\
 		ft_strsplit.c ft_isascii.c ft_lstaddafter.c ft_lstaddend.c ft_putstrlst.c\
-		ft_3Dstrin.c ft_2Dstrcmp.c ft_3Dputstr.c
+		ft_3dstrin.c ft_2dstrcmp.c ft_3dputstr.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

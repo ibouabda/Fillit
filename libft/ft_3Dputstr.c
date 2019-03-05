@@ -6,13 +6,13 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 13:30:16 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/21 13:33:54 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:06:44 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_3Dputstr(char ***tetrim)
+void	ft_3dputstr(char ***tetrim)
 {
 	size_t i;
 	size_t k;

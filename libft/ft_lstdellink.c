@@ -6,13 +6,13 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 14:45:52 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/01/22 16:18:21 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:01:24 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdellink(t_list *m)
+void	ft_lstdellink(t_list *m)
 {
 	free(&m->content);
 	free(&m->content_size);

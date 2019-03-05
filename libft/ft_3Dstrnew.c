@@ -6,14 +6,14 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 16:51:45 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/20 16:50:23 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:06:41 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	***ft_3Dstrnew(size_t size)
+char	***ft_3dstrnew(size_t size)
 {
 	char	***str;
 	size_t	i;

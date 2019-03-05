@@ -6,13 +6,13 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:18:54 by retounsi          #+#    #+#             */
-/*   Updated: 2019/02/22 11:33:07 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:06:47 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_2Dstrcmp(char **s1, char **s2)
+int	ft_2dstrcmp(char **s1, char **s2)
 {
 	size_t i;
 

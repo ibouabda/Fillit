@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/21 16:23:57 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/05 14:10:06 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ void				ft_putstrlst(t_list *m);
 void				ft_lstaddafter(t_list **alst, t_list *new);
 t_list				*ft_lstnewstr(char *content, size_t content_size);
 void				ft_lstdellink(t_list *m);
-char				**ft_2Dstrnew(size_t size);
-char				***ft_3Dstrnew(size_t size);
-int					ft_3Dstrin(char ***s1, char ***s2);
-void				ft_3Dputstr(char ***tetrim);
-int					ft_2Dstrcmp(char **s1, char **s2);
+char				**ft_2dstrnew(size_t size);
+char				***ft_3dstrnew(size_t size);
+int					ft_3dstrin(char ***s1, char ***s2);
+void				ft_3dputstr(char ***tetrim);
+int					ft_2dstrcmp(char **s1, char **s2);
 #endif
