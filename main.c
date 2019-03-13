@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/22 13:19:30 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/12 12:50:16 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	i = 0;
 	k = 0;
-	tetrim = ft_3Dstrnew(26);
-	tetrim_check = ft_3Dstrnew(19);
+	tetrim = ft_3dstrnew(26);
+	tetrim_check = ft_3dstrnew(19);
 	ft_readtetris_check(fd_check, tetrim_check);
 	if (!(ft_readtetris_check(fd, tetrim)))
 	{
@@ -40,11 +40,13 @@ int main(int argc, char **argv)
 	}
 	ft_erase_column(tetrim);
 	ft_erase_column(tetrim_check);
+	ft_3dputstr(tetrim);
+	ft_3dputstr(tetrim_check);
 	if (!ft_check(tetrim, tetrim_check))
 	{
 		ft_putstr("Tetriminos non valide !\n");
 		return (0);
 	}
 	printf("tetrim : \n\n");
-	ft_3Dputstr(tetrim);
+	ft_3dputstr(tetrim);
 }

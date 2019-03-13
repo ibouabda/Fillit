@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/02/20 18:18:38 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/11 13:43:39 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_new_tetrim(char ***tet, size_t *ntet, char *let, size_t *y)
 	if (*ntet >= 25)
 		return (0);
 	*ntet += 1;
-	tet[*ntet] = ft_2Dstrnew(4);
+	tet[*ntet] = ft_2dstrnew(4);
 	*let += 1;
 	*y = 0;
 	return (1);
@@ -48,7 +48,7 @@ int		ft_readtetris(int fd, char ***tetrim)
 	letter = 'A';
 	y = 0;
 	ntetrim = 0;
-	tetrim[ntetrim] = ft_2Dstrnew(4);
+	tetrim[ntetrim] = ft_2dstrnew(4);
 	while (get_next_line(fd, &line))
 	{
 		if (!line[0])
