@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/13 17:36:46 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/13 18:19:54 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,24 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 	size_t	nb_line;
 	size_t	ntetrim;
 
-	nb_line = 1;
+	nb_line = 0;
 	y = 0;
 	ntetrim = 0;
 	tetrim[ntetrim] = ft_2dstrnew(4);
-	while (get_next_line(fd, &line))
+	while (++nb_line && get_next_line(fd, &line))
 	{
-		if (!line[0] && (nb_line) % 5 == 0)
+		if (!line[0] && nb_line % 5 == 0)
 		{
 			if (!(ft_new_tetrim_check(tetrim, &ntetrim, &y)))
 				return (0);
 			if (get_next_line(fd, &line))
 				nb_line++;
 		}
-		else if (!line[0] && (nb_line) % 5 != 0)
-			return (0);
-		if (ft_strlen(line) != 4)
+		else if ((!line[0] && nb_line % 5 != 0)
+		|| ft_strlen(line) != 4 || y > 4)
 			return (0);
 		if (ft_verif_line_check(line))
 			tetrim[ntetrim][y++] = line;
-		if (y > 4)
-			return (0);
-		nb_line++;
 	}
 	return (tetrim[0][0] != NULL && nb_line % 5 == 0);
 }
