@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/12 12:50:16 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/20 14:51:39 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_putstr("Error Arguments\n");
+		ft_putstr("usage: ./fillit.out target_file");
 		return (0);
 	}
 	fd_check = open("library.fillit", O_RDONLY);
@@ -35,18 +35,15 @@ int main(int argc, char **argv)
 	ft_readtetris_check(fd_check, tetrim_check);
 	if (!(ft_readtetris_check(fd, tetrim)))
 	{
-		ft_putendl("Not Valid File");
+		ft_putendl("error");
 		return (0);
 	}
 	ft_erase_column(tetrim);
 	ft_erase_column(tetrim_check);
-	ft_3dputstr(tetrim);
-	ft_3dputstr(tetrim_check);
 	if (!ft_check(tetrim, tetrim_check))
 	{
-		ft_putstr("Tetriminos non valide !\n");
+		ft_putendl("error");
 		return (0);
 	}
-	printf("tetrim : \n\n");
 	ft_3dputstr(tetrim);
 }
