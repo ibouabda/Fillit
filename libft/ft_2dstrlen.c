@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_2dstrlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:17:09 by retounsi          #+#    #+#             */
-/*   Updated: 2019/03/21 13:21:19 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/21 13:31:48 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_3dstrlen(char **str)
+int		ft_2dstrlen(char **str)
 {
 	size_t i;
 

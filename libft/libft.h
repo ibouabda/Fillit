@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/05 14:10:06 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/21 13:31:15 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,6 @@ char				***ft_3dstrnew(size_t size);
 int					ft_3dstrin(char ***s1, char ***s2);
 void				ft_3dputstr(char ***tetrim);
 int					ft_2dstrcmp(char **s1, char **s2);
+int					ft_2dstrlen(char **str);
+int					ft_3dstrlen(char ***str);
 #endif
