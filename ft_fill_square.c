@@ -6,11 +6,29 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/22 11:22:18 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/22 12:03:27 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	ft_fill_point(char **square, size_t size)
+{
+	size_t x;
+	size_t y;
+
+	x = 0;
+	y = 0;
+	while (y < size)
+	{
+		while (square[y][x])
+		{
+			square[y][x] = '.';
+			x++;
+		}
+		y++;
+	}
+}
 
 int		ft_add_tetrim(size_t size, char **square, char ***tetrim)
 {
