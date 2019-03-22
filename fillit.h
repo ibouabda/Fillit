@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 17:16:30 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/21 14:34:56 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:08:21 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	ft_erase_column(char ***tetrim);
 int		ft_readtetris_check(int fd, char ***tetrim);
 int		ft_check(char ***tetrim, char ***tetrim_check);
 void	ft_convert_tetrim(char ***tetrim);
-char**	ft_fill_square(size_t size, char ***tetrim);
+char	**ft_fill_square(size_t size, char ***tetrim);
 
 #endif

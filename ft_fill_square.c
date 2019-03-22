@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/21 16:57:27 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/22 11:22:18 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int ft_add_tetrim(size_t size, char** square, char ***tetrim)
+int		ft_add_tetrim(size_t size, char **square, char ***tetrim)
 {
 	size_t x;
 	size_t y;
@@ -34,10 +34,10 @@ int ft_add_tetrim(size_t size, char** square, char ***tetrim)
 	}
 }
 
-char** ft_fill_square(size_t size, char ***tetrim)
+char	**ft_fill_square(size_t size, char ***tetrim)
 {
-	char** square;
-	size_t i;
+	char	**square;
+	size_t	i;
 
 	i = 0;
 	square = ft_2dstrnew(size);
