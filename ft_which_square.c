@@ -6,7 +6,7 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/22 11:21:23 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/22 11:24:37 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,9 @@ int		ft_which_square(char ***tetrim)
 	int size;
 
 	size = ft_sqrt(ft_2dstrlen(*tetrim) * 4);
-
 	while (size <= 16)
 	{
-		/if (ft_fill_square(size, tetrim))
+		if (ft_fill_square(size, tetrim))
 			return (1);
 		size++;
 	}

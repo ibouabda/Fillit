@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/21 13:50:03 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/22 11:24:06 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
-	int fd;
-	int fd_check;
-	char ***tetrim;
-	char ***tetrim_check;
-	size_t i;
-	size_t k;
+	int		fd;
+	int		fd_check;
+	char	***tetrim;
+	char	***tetrim_check;
+	size_t	i;
+	size_t	k;
 
 	if (argc != 2)
 	{
