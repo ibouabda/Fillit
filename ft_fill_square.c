@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/03/26 11:15:08 by ibouabda         ###   ########.fr       */
-=======
-/*   Updated: 2019/03/22 12:20:50 by retounsi         ###   ########.fr       */
->>>>>>> 660915bd212cfd95f53dde602bada3f3a5ca34ab
+/*   Updated: 2019/03/26 14:50:14 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +21,13 @@ void	ft_fill_point(char **square, size_t size)
 	y = 0;
 	while (y < size)
 	{
-		while (square[y][x])
+		while (x < size)
 		{
 			square[y][x] = '.';
 			x++;
 		}
 		y++;
+		x = 0;
 	}
 }
 
@@ -43,6 +40,8 @@ int ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 	y2 = 0;
 	while (tetrim[y2] && square[y])
 	{
+		x2 = 0;
+		x = 0;
 		while (tetrim[y2][x2] && square[y][x])
 		{
 			square[y][x] = tetrim[y2][x2];
@@ -52,12 +51,11 @@ int ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 		y++;
 		y2++;
 	}
-	return (y2 == ft_2dstrlen(tetrim) - 1 &&
-	 x2 == ft_strlen(tetrim[ft_2dstrlen(tetrim) - 1]));
+	return (y2 == (size_t)ft_2dstrlen(tetrim) &&
+	 x2 == (size_t)ft_strlen(tetrim[ft_2dstrlen(tetrim) - 1]));
 }
 
-
-int		ft_add_tetrim(size_t size, char **square, char ***tetrim)
+int		ft_add_tetrim(size_t size, char **square, char **tetrim)
 {
 	size_t x;
 	size_t y;
@@ -65,18 +63,18 @@ int		ft_add_tetrim(size_t size, char **square, char ***tetrim)
 
 	x = 0;
 	y = 0;
+	i = 0;
 	while (y < size)
 	{
 		while (x < size)
 		{
-			if (ft_fill_tetrim(tetrim[i], square, x, y))
-				i++;
-			else
-				return (0);
+			if (ft_fill_tetrim(tetrim, square, x, y))
+				return(1);
 			x++;
 		}
 		y++;
 	}
+	return (0);
 }
 
 char	**ft_fill_square(size_t size, char ***tetrim)
@@ -88,10 +86,12 @@ char	**ft_fill_square(size_t size, char ***tetrim)
 	square = ft_2dstrnew(size);
 	while (i < size)
 	{
-		square[size] = ft_strnew(size);
+		square[i] = ft_strnew(size);
 		i++;
 	}
+	ft_fill_point(square, size);
 	i = 0;
+	//printf("ft_3dstrlen : %i\n", ft_3dstrlen(tetrim));
 	while (tetrim[i])
 	{
 		ft_add_tetrim(size, square, tetrim[i]);

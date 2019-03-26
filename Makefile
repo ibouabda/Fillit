@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
+#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/03/21 17:06:36 by retounsi         ###   ########.fr        #
+#    Updated: 2019/03/26 11:39:40 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FSANITISE_NAME = fsanitize.out
 
 CC_FSANITISE = gcc -fsanitize=address -g
 
-SRC_NAME = get_next_line.c ft_readtetris.c ft_erase_column.c\
+SRC_NAME = get_next_line.c ft_erase_column.c\
 			ft_readtetris_check.c ft_check.c ft_which_square.c\
 			ft_fill_square.c main.c
 

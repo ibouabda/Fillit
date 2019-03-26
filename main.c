@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/22 11:24:06 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/26 12:15:31 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	ft_convert_tetrim(tetrim);
-	ft_3dputstr(tetrim);
+	ft_2dputstr(ft_which_square(tetrim));
 }
