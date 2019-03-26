@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/26 12:11:09 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/26 15:45:01 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ int					ft_2dstrlen(char **str);
 int					ft_3dstrlen(char ***str);
 int					ft_sqrt(int nb);
 void				ft_2dputstr(char **tetrim);
+void				ft_2dstrdel(char ***as);
 
 #endif
