@@ -3,14 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/03/26 11:15:08 by ibouabda         ###   ########.fr       */
+=======
+/*   Updated: 2019/03/22 12:20:50 by retounsi         ###   ########.fr       */
+>>>>>>> 660915bd212cfd95f53dde602bada3f3a5ca34ab
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	ft_fill_point(char **square, size_t size)
+{
+	size_t x;
+	size_t y;
+
+	x = 0;
+	y = 0;
+	while (y < size)
+	{
+		while (square[y][x])
+		{
+			square[y][x] = '.';
+			x++;
+		}
+		y++;
+	}
+}
 
 int ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 {
