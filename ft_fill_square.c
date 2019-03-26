@@ -3,33 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/26 14:50:14 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/26 15:10:49 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-void	ft_fill_point(char **square, size_t size)
-{
-	size_t x;
-	size_t y;
-
-	x = 0;
-	y = 0;
-	while (y < size)
-	{
-		while (x < size)
-		{
-			square[y][x] = '.';
-			x++;
-		}
-		y++;
-		x = 0;
-	}
-}
 
 int ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 {
@@ -77,21 +58,11 @@ int		ft_add_tetrim(size_t size, char **square, char **tetrim)
 	return (0);
 }
 
-char	**ft_fill_square(size_t size, char ***tetrim)
+char	**ft_fill_square(size_t size, char ***tetrim, char **square)
 {
-	char	**square;
 	size_t	i;
 
 	i = 0;
-	square = ft_2dstrnew(size);
-	while (i < size)
-	{
-		square[i] = ft_strnew(size);
-		i++;
-	}
-	ft_fill_point(square, size);
-	i = 0;
-	//printf("ft_3dstrlen : %i\n", ft_3dstrlen(tetrim));
 	while (tetrim[i])
 	{
 		ft_add_tetrim(size, square, tetrim[i]);
