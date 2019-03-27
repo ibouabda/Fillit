@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/26 17:56:01 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/27 15:10:08 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,21 @@ int		ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 {
 	size_t x2;
 	size_t y2;
+	size_t x_local;
 
-	x2 = 0;
 	y2 = 0;
-	while (tetrim[y2] && square[y])
+	while (tetrim[y2])
 	{
+		if (!square[y])
+			return (0);
 		x2 = 0;
-		x = 0;
-		while (tetrim[y2][x2] && square[y][x])
+		x_local = x;
+		while (tetrim[y2][x2])
 		{
-			/*if (square[y][x] != '.')
-				return(0);*/
-			square[y][x] = tetrim[y2][x2];
-			x++;
+			if (square[y][x_local] != '.')
+				return (0);
+			square[y][x_local] = tetrim[y2][x2];
+			x_local++;
 			x2++;
 		}
 		y++;
@@ -44,11 +46,11 @@ int		ft_add_tetrim(size_t size, char **square, char **tetrim)
 	size_t y;
 	size_t i;
 
-	x = 0;
 	y = 0;
 	i = 0;
 	while (y < size)
 	{
+		x = 0;
 		while (x < size)
 		{
 			if (ft_fill_tetrim(tetrim, square, x, y))
@@ -56,7 +58,6 @@ int		ft_add_tetrim(size_t size, char **square, char **tetrim)
 			x++;
 		}
 		y++;
-		x = 0;
 	}
 	return (0);
 }
