@@ -1,54 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_square.c                                   :+:      :+:    :+:   */
+/*   ft_fill_square_save.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/27 16:05:42 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/27 15:39:20 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char ft_find_letter(char *tetrim)
-{
-	size_t x;
-	char letter;
-
-		x = 0;
-		while (tetrim[x])
-		{
-			if (tetrim[x] != '.')
-			{
-				letter = tetrim[x];
-				return(letter);
-			}
-			x++;
-		}
-	return (0);
-}
-
-void ft_clear_square(char **square, char *tetrim)
+int ft_clear_square(char **square, char **tetrim)
 {
 	size_t x;
 	size_t y;
 	char letter;
 
 	y = 0;
-	letter = ft_find_letter(tetrim);
-	while (square[y])
+	while (tetrim[y])
 	{
-		x = 0;
-		while (square[y][x])
+		while (tetrim[y][x])
 		{
-			if (square[y][x] == letter)
-				square[y][x] = '.';
+			x = 0;
+			if (tetrim[y][x] != '.')
+			{
+				letter = tetrim[y][x];
+				y = 0;
+				while (square[y])
+				{
+					x = 0;
+					while (square[y][x])
+					{
+						if (square[y][x] == letter)
+							square[y][x] = '.';
+						x++;
+					}
+					y++;
+				}
+				x++;
+				return (1);
+			}
 			x++;
 		}
 		y++;
 	}
+	return (0);
 }
 
 int ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
@@ -95,7 +93,7 @@ int ft_add_tetrim(size_t size, char **square, char **tetrim)
 			if (ft_fill_tetrim(tetrim, square, x, y))
 				return (1);
 			else
-				ft_clear_square(square, tetrim[0]);
+				ft_clear_square(square, tetrim);
 			x++;
 		}
 		y++;
