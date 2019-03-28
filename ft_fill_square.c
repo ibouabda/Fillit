@@ -6,13 +6,11 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/28 17:43:12 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/28 17:44:07 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-
 
 int		ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 {
