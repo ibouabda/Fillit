@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/20 15:01:45 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/27 17:53:36 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 	{
 		if (!line[0] && nb_line % 5 == 0)
 		{
+			if (y == 0)
+				return (0);
 			if (!(ft_new_tetrim_check(tetrim, &ntetrim, &y)))
 				return (0);
 			if (get_next_line(fd, &line))
@@ -62,5 +64,5 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 		if (ft_verif_line_check(line))
 			tetrim[ntetrim][y++] = line;
 	}
-	return (tetrim[0][0] != NULL && nb_line % 5 == 0 && !line[0]);
+	return (tetrim[0][0] != NULL && nb_line % 5 == 0 && !line[0] && y > 0);
 }
