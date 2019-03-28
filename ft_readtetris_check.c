@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/27 17:53:36 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/28 17:42:04 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 	{
 		if (!line[0] && nb_line % 5 == 0)
 		{
-			if (y == 0)
-				return (0);
-			if (!(ft_new_tetrim_check(tetrim, &ntetrim, &y)))
+			if (!y || !(ft_new_tetrim_check(tetrim, &ntetrim, &y)))
 				return (0);
 			if (get_next_line(fd, &line))
 				nb_line++;
