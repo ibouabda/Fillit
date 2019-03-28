@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 17:16:30 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/26 15:37:01 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/03/28 17:30:25 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int		ft_check(char ***tetrim, char ***tetrim_check);
 void	ft_convert_tetrim(char ***tetrim);
 char	**ft_fill_square(size_t size, char ***tetrim, char **square);
 char	**ft_which_square(char ***tetrim);
+void ft_clear_square(char **square, char *tetrim);
+char ft_find_letter(char *tetrim);
 
 #endif

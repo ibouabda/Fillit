@@ -3,53 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/27 16:05:42 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/28 17:31:30 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char ft_find_letter(char *tetrim)
-{
-	size_t x;
-	char letter;
 
-		x = 0;
-		while (tetrim[x])
-		{
-			if (tetrim[x] != '.')
-			{
-				letter = tetrim[x];
-				return(letter);
-			}
-			x++;
-		}
-	return (0);
-}
-
-void ft_clear_square(char **square, char *tetrim)
-{
-	size_t x;
-	size_t y;
-	char letter;
-
-	y = 0;
-	letter = ft_find_letter(tetrim);
-	while (square[y])
-	{
-		x = 0;
-		while (square[y][x])
-		{
-			if (square[y][x] == letter)
-				square[y][x] = '.';
-			x++;
-		}
-		y++;
-	}
-}
 
 int ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 {
