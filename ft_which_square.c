@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_which_square.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/28 17:45:49 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:06:33 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,40 @@ void	ft_convert_tetrim(char ***tetrim)
 	}
 }
 
-char	ft_find_letter(char *tetrim)
+size_t	*ft_find_tetrim(char **square, char letter)
 {
 	size_t	x;
-	char	letter;
+	size_t	y;
+	size_t	*tab;
 
+	y = 0;
 	x = 0;
-	while (tetrim[x])
+	tab = ft_memalloc(16);
+	while (square[y])
 	{
-		if (tetrim[x] != '.')
+		while (square[y][x])
 		{
-			letter = tetrim[x];
-			return (letter);
+			if (square[y][x] == letter)
+			{
+				tab[0] = y;
+				tab[1] = x;
+				return (tab);
+			}
+			x++;
+			y++;
 		}
-		x++;
 	}
 	return (0);
 }
 
-void	ft_clear_square(char **square, char *tetrim)
+void	ft_clear_tetrim(char **square, size_t ntet)
 {
 	size_t	x;
 	size_t	y;
 	char	letter;
 
 	y = 0;
-	letter = ft_find_letter(tetrim);
+	letter = 'A' + ntet;
 	while (square[y])
 	{
 		x = 0;

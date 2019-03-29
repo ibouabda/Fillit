@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/28 17:44:07 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:06:34 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,12 @@ int		ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 			x2 == (size_t)ft_strlen(tetrim[ft_2dstrlen(tetrim) - 1]));
 }
 
-int		ft_add_tetrim(size_t size, char **square, char **tetrim)
+int		ft_add_tetrim(size_t size, char **square, char **tetrim, size_t ntet)
 {
 	size_t	x;
 	size_t	y;
-	size_t	i;
 
 	y = 0;
-	i = 0;
 	while (y < size)
 	{
 		x = 0;
@@ -56,7 +54,7 @@ int		ft_add_tetrim(size_t size, char **square, char **tetrim)
 			if (ft_fill_tetrim(tetrim, square, x, y))
 				return (1);
 			else
-				ft_clear_square(square, tetrim[0]);
+				ft_clear_square(square, ntet);
 			x++;
 		}
 		y++;
@@ -71,7 +69,7 @@ char	**ft_fill_square(size_t size, char ***tetrim, char **square)
 	i = 0;
 	while (tetrim[i])
 	{
-		if (ft_add_tetrim(size, square, tetrim[i]) == 0)
+		if (ft_add_tetrim(size, square, tetrim[i], i) == 0)
 			return (0);
 		i++;
 	}
