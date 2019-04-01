@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/29 14:06:33 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/01 16:31:55 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ size_t	*ft_find_tetrim(char **square, char letter)
 	size_t	*tab;
 
 	y = 0;
-	x = 0;
 	tab = ft_memalloc(16);
 	while (square[y])
 	{
+		x = 0;
 		while (square[y][x])
 		{
 			if (square[y][x] == letter)
@@ -61,8 +61,8 @@ size_t	*ft_find_tetrim(char **square, char letter)
 				return (tab);
 			}
 			x++;
-			y++;
 		}
+		y++;
 	}
 	return (0);
 }
@@ -113,7 +113,7 @@ char	**ft_which_square(char ***tetrim)
 	char	**square;
 	size_t	i;
 
-	size = ft_sqrt(ft_3dstrlen(tetrim) * 4);
+	size = ft_sqrt_aprox(ft_3dstrlen(tetrim) * 4);
 	while (size <= 16)
 	{
 		i = 0;
