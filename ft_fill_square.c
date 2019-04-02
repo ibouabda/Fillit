@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 19:02:30 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 19:51:31 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		ft_reorganize(char **square, char **tetrim, int i, size_t size)
 		{
 			if (ft_fill_tetrim(tetrim, square, tab[1], tab[0]))
 			{
+				free(tab);
 				return (1);
 			}
 			else
@@ -66,6 +67,7 @@ int		ft_reorganize(char **square, char **tetrim, int i, size_t size)
 		tab[0]++;
 		tab[1] = -1;
 	}
+	free (tab);
 	return (0);
 }
 

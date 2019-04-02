@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2dstrdel.c                                      :+:      :+:    :+:   */
+/*   ft_3dstrdel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/26 15:40:50 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 20:06:32 by ibouabda         ###   ########.fr       */
+/*   Created: 2019/04/02 19:32:10 by ibouabda          #+#    #+#             */
+/*   Updated: 2019/04/02 20:05:32 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_2dstrdel(char ***as)
+void	ft_3dstrdel(char ****as)
 {
-	size_t i;
+	int i;
 
 	i = 0;
 	if (as != NULL)
 	{
 		while (*as[i])
 		{
-			ft_strdel(as[i]);
+			ft_2dstrdel(&(*as[i]));
 			i++;
 		}
 		free(*as);

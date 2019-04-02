@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 19:02:05 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 20:00:52 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ size_t	*ft_find_tetrim(char **square, char letter, char **tetrim)
 		}
 		y++;
 	}
+	free (tab);
 	return (0);
 }
 
@@ -130,6 +131,8 @@ char	**ft_which_square(char ***tetrim)
 		ft_fill_point(square, size);
 		if ((square = ft_fill_square(size, tetrim, square)))
 			return (square);
+		else
+			ft_2dstrdel(&square);
 		size++;
 	}
 	return (NULL);
