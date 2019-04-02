@@ -6,7 +6,7 @@
 #    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/04/02 14:58:05 by retounsi         ###   ########.fr        #
+#    Updated: 2019/04/02 17:33:56 by retounsi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRC_NAME = get_next_line.c ft_erase_column.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-all: .libft $(NAME)
+all: $(NAME)
 
 $(FSANITIZE_NAME): .libft $(OBJ_NAME)
 	$(CC_FSANITIVE) -c $(SRC_NAME)
@@ -37,7 +37,7 @@ $(FSANITIZE_NAME): .libft $(OBJ_NAME)
 .libft:
 	make -C $(PATHFILE)
 
-$(NAME): $(OBJ_NAME) libft/libft.a
+$(NAME): .libft $(OBJ_NAME) libft/libft.a
 	$(CC) $(CFLAGS) -c $(SRC_NAME)
 	$(CC) -o $(NAME) $(OBJ_NAME) libft/libft.a
 
