@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/01 15:42:34 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 12:01:48 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # include <string.h>
 # include <stdlib.h>
-#include <stdio.h>
+# include <stdio.h>
 
 typedef	struct		s_list
 {

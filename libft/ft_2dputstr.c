@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 12:05:39 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/26 12:07:56 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 11:54:31 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_2dputstr(char **tetrim)
 		ft_putendl(tetrim[i]);
 		i++;
 	}
-	ft_putchar('\n');
 }
