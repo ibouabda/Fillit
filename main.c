@@ -6,34 +6,36 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/26 12:15:31 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 11:49:50 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
+int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
+{
+	int	fd;
+	int	fd_check;
+
+	fd_check = open("library.fillit", O_RDONLY);
+	fd = open(argv, O_RDONLY);
+	ft_readtetris_check(fd_check, tetrim_check);
+	return (ft_readtetris_check(fd, tetrim));
+}
+
 int		main(int argc, char **argv)
 {
-	int		fd;
-	int		fd_check;
 	char	***tetrim;
 	char	***tetrim_check;
-	size_t	i;
-	size_t	k;
 
 	if (argc != 2)
 	{
 		ft_putstr("usage: ./fillit.out target_file");
 		return (0);
 	}
-	fd_check = open("library.fillit", O_RDONLY);
-	fd = open(argv[1], O_RDONLY);
-	i = 0;
-	k = 0;
 	tetrim = ft_3dstrnew(26);
 	tetrim_check = ft_3dstrnew(19);
-	ft_readtetris_check(fd_check, tetrim_check);
-	if (!(ft_readtetris_check(fd, tetrim)))
+	if (!(open_files(argv[1], tetrim, tetrim_check)))
 	{
 		ft_putendl("error");
 		return (0);

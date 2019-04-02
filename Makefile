@@ -6,11 +6,11 @@
 #    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/03/26 11:39:40 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/04/02 13:47:34 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fillit.out
+NAME = fillit
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -23,7 +23,7 @@ FSANITISE_NAME = fsanitize.out
 CC_FSANITISE = gcc -fsanitize=address -g
 
 SRC_NAME = get_next_line.c ft_erase_column.c\
-			ft_readtetris_check.c ft_check.c ft_which_square.c\
+			ft_readtetris_check.c ft_which_square.c\
 			ft_fill_square.c main.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
@@ -44,7 +44,7 @@ $(NAME): $(OBJ_NAME) libft/libft.a
 clean:
 	rm -f $(OBJ_NAME)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:clean
+		rm -f $(NAME)
 
 re: fclean all

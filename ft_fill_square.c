@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/01 16:44:51 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 13:38:09 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,55 +40,29 @@ int		ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 			x2 == (size_t)ft_strlen(tetrim[ft_2dstrlen(tetrim) - 1]));
 }
 
-int		ft_add_tetrim(size_t size, char **square, char **tetrim, size_t ntet)
-{
-	size_t	x;
-	size_t	y;
-
-	y = 0;
-	while (y < size)
-	{
-		x = 0;
-		while (x < size)
-		{
-			if (ft_fill_tetrim(tetrim, square, x, y))
-				return (1);
-			else
-				ft_clear_tetrim(square, ntet);
-			x++;
-		}
-		y++;
-	}
-	return (0);
-}
-
-int		ft_reorganize(char **square,char **tetrim, int i, size_t size)
+int		ft_reorganize(char **square, char **tetrim, int i, size_t size)
 {
 	size_t *tab;
 
 	if ((tab = ft_find_tetrim(square, 'A' + i)))
-	{
-		tab[1]++;
 		ft_clear_tetrim(square, i);
-	}
 	else
 	{
 		tab = ft_memalloc(16);
 		tab[0] = 0;
-		tab[1] = 0;
+		tab[1] = -1;
 	}
 	while (tab[0] < size)
 	{
-		while (tab[1] < size)
+		while (++tab[1] < size)
 		{
 			if (ft_fill_tetrim(tetrim, square, tab[1], tab[0]))
 				return (1);
 			else
 				ft_clear_tetrim(square, i);
-			tab[1]++;
 		}
 		tab[0]++;
-		tab[1] = 0;
+		tab[1] = -1;
 	}
 	return (0);
 }
@@ -104,11 +78,9 @@ char	**ft_fill_square(size_t size, char ***tetrim, char **square)
 			i++;
 		else
 			i--;
-		ft_2dputstr(square);
 	}
 	if (i >= 0)
 		return (square);
 	else
 		return (0);
 }
- 
