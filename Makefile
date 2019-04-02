@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
+#    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/04/02 13:47:34 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/04/02 14:58:05 by retounsi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,11 @@ $(NAME): $(OBJ_NAME) libft/libft.a
 
 clean:
 	rm -f $(OBJ_NAME)
+	make clean -C $(PATHFILE)
 
-fclean:clean
+fclean:
+		rm -f $(OBJ_NAME)
 		rm -f $(NAME)
+		make fclean -C $(PATHFILE)
 
 re: fclean all
