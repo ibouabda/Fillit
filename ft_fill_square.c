@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 13:38:09 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/02 19:02:30 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_reorganize(char **square, char **tetrim, int i, size_t size)
 {
 	size_t *tab;
 
-	if ((tab = ft_find_tetrim(square, 'A' + i)))
+	if ((tab = ft_find_tetrim(square, 'A' + i, tetrim)))
 		ft_clear_tetrim(square, i);
 	else
 	{
@@ -57,7 +57,9 @@ int		ft_reorganize(char **square, char **tetrim, int i, size_t size)
 		while (++tab[1] < size)
 		{
 			if (ft_fill_tetrim(tetrim, square, tab[1], tab[0]))
+			{
 				return (1);
+			}
 			else
 				ft_clear_tetrim(square, i);
 		}
