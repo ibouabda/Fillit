@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/03 17:24:01 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/03 18:28:03 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,17 @@ int		main(int argc, char **argv)
 	square = ft_which_square(tetrim);
 	ft_2dputstr(square);
 	ft_2dstrdel(square);
-	while (1 == 1)
+	/*while (1 == 1)
 		i++;
+*/
+	/*char *line;
+	int	fd_check;
+
+	fd_check = open("library.fillit", O_RDONLY);
+	while (get_next_line(fd_check, &line))
+	{
+		ft_putendl(line);
+		free(line);
+	}*/
 	return (0);
 }

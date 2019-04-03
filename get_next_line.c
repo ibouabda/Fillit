@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:31:27 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/03/13 11:45:32 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/03 18:14:31 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ int			get_next_line(const int fd, char **line)
 		ft_strdel(&todel);
 	}
 	ft_strdel(&buftmp);
-	takeline(id->content, line);
-	if (red == 0)
+	if (red == 0 && !((char *)id->content)[0])
 		return (0);
+	takeline(id->content, line);
 	return (1);
 }
