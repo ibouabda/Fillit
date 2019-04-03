@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 19:37:57 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/03 16:30:09 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int					ft_3dstrlen(char ***str);
 int					ft_sqrt(int nb);
 int					ft_sqrt_aprox(int nb);
 void				ft_2dputstr(char **tetrim);
-void				ft_2dstrdel(char ***as);
-void				ft_3dstrdel(char ****as);
+void				ft_2dstrdel(char **as);
+void				ft_3dstrdel(char ***as);
 
 #endif

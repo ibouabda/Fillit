@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_which_square.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 20:00:52 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/03 16:29:05 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ char	**ft_which_square(char ***tetrim)
 		if ((square = ft_fill_square(size, tetrim, square)))
 			return (square);
 		else
-			ft_2dstrdel(&square);
+			ft_2dstrdel(square);
 		size++;
 	}
 	return (NULL);
