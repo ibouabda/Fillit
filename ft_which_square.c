@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_which_square.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/03 16:29:05 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/03 16:57:42 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,23 +116,23 @@ char	**ft_which_square(char ***tetrim)
 {
 	size_t	size;
 	char	**square;
+	char	**todel;
 	size_t	i;
 
-	size = ft_sqrt_aprox(ft_3dstrlen(tetrim) * 4);
+	size = 2;
 	while (size <= 16)
 	{
 		i = 0;
-		square = ft_2dstrnew(size);
+		todel = ft_2dstrnew(size);
 		while (i < size)
 		{
-			square[i] = ft_strnew(size);
+			todel[i] = ft_strnew(size);
 			i++;
 		}
-		ft_fill_point(square, size);
-		if ((square = ft_fill_square(size, tetrim, square)))
+		ft_fill_point(todel, size);
+		if ((square = ft_fill_square(size, tetrim, todel)))
 			return (square);
-		else
-			ft_2dstrdel(square);
+		ft_2dstrdel(todel);
 		size++;
 	}
 	return (NULL);

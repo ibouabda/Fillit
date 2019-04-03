@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/03 16:20:16 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/03 17:24:01 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int		main(int argc, char **argv)
 {
 	char	***tetrim;
 	char	***tetrim_check;
+	char	**square;
+	int i;
 
+	i = 0;
 	if (argc != 2)
 	{
 		ft_putstr("usage: ./fillit.out target_file");
@@ -37,7 +40,8 @@ int		main(int argc, char **argv)
 	tetrim_check = ft_3dstrnew(19);
 	if (!(open_files(argv[1], tetrim, tetrim_check)))
 	{
-		ft_putendl("error");
+		ft_3dputstr(tetrim);
+		ft_putendl("error read tetris check");
 		return (0);
 	}
 	ft_erase_column(tetrim);
@@ -48,6 +52,10 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	ft_convert_tetrim(tetrim);
-	ft_2dputstr(ft_which_square(tetrim));
+	square = ft_which_square(tetrim);
+	ft_2dputstr(square);
+	ft_2dstrdel(square);
+	while (1 == 1)
+		i++;
 	return (0);
 }
