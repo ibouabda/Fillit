@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:31:27 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 13:10:09 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/08 18:04:15 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ int			get_next_line(const int fd, char **line)
 		ft_strdel(&todel);
 	}
 	ft_strdel(&buftmp);
-	takeline(id->content, line);
 	if (red == 0 && !((char *)id->content)[0])
 		return (0);
+	takeline(id->content, line);
 	return (1);
 }

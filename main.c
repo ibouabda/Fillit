@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 14:27:57 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/08 18:28:35 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+int		read_final_return(char *argv)
+{
+	int fd;
+	int red;
+	char *buf;
+
+	buf = ft_strnew(4096);
+	fd = open(argv, O_RDONLY);
+	red = read(fd, buf, 4096);
+	if (buf[red - 1] == '\n')
+		return (1);
+	return (0);
+}
 
 int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 {
@@ -20,7 +34,7 @@ int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 	fd_check = open("library.fillit", O_RDONLY);
 	fd = open(argv, O_RDONLY);
 	ft_readtetris_check(fd_check, tetrim_check);
-	return (ft_readtetris_check(fd, tetrim));
+	return (ft_readtetris_check(fd, tetrim) && read_final_return(argv));
 }
 
 int		main(int argc, char **argv)
@@ -54,14 +68,15 @@ int		main(int argc, char **argv)
 	square = ft_which_square(tetrim);
 	ft_2dputstr(square);
 	ft_2dstrdel(square);
-	free(tetrim[0][0]);
 	while (1 == 1)
 		i++;
 	/*char *line;
 	int	fd_check;
+	int p;
 
+	p = -1;
 	fd_check = open("library.fillit", O_RDONLY);
-	while (get_next_line(fd_check, &line))
+	while ((p = get_next_line(fd_check, &line)) && printf("%d\n", p))
 	{
 		ft_putendl(line);
 		free(line);
