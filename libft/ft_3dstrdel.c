@@ -6,27 +6,25 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 19:32:10 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 14:22:20 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/08 21:12:56 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_3dstrdel(char ***tetrim)
+void	ft_3dstrdel(char ***as)
 {
-	size_t i;
-	size_t k;
+	int i;
 
 	i = 0;
-	k = 0;
-	while (tetrim[i])
+	if (as != NULL)
 	{
-		while (tetrim[i][k])
+		while (as[i])
 		{
-
+			ft_2dstrdel(as[i]);
+			i++;
 		}
-		free(tetrim[i]);
-		i++;
+		free(as);
+		as = NULL;
 	}
-	free(tetrim);
 }

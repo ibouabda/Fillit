@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_which_square.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 13:08:09 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/03 16:57:42 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/08 20:24:36 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ size_t	*ft_find_tetrim(char **square, char letter, char **tetrim)
 	i = 0;
 	while (tetrim[0][i] == '.')
 		i++;
-	y = 0;
+	y = -1;
 	tab = ft_memalloc(16);
-	while (square[y])
+	while (square[++y])
 	{
-		x = 0;
-		while (square[y][x])
+		x = -1;
+		while (square[y][++x])
 		{
 			if (square[y][x] == letter)
 			{
@@ -64,11 +64,9 @@ size_t	*ft_find_tetrim(char **square, char letter, char **tetrim)
 				tab[1] = x - i;
 				return (tab);
 			}
-			x++;
 		}
-		y++;
 	}
-	free (tab);
+	free(tab);
 	return (0);
 }
 
@@ -116,23 +114,19 @@ char	**ft_which_square(char ***tetrim)
 {
 	size_t	size;
 	char	**square;
-	char	**todel;
 	size_t	i;
 
-	size = 2;
+	size = ft_sqrt_aprox(ft_3dstrlen(tetrim) * 4);
 	while (size <= 16)
 	{
 		i = 0;
-		todel = ft_2dstrnew(size);
+		square = ft_2dstrnew(size);
 		while (i < size)
-		{
-			todel[i] = ft_strnew(size);
-			i++;
-		}
-		ft_fill_point(todel, size);
-		if ((square = ft_fill_square(size, tetrim, todel)))
+			square[i++] = ft_strnew(size);
+		ft_fill_point(square, size);
+		if (ft_fill_square(size, tetrim, square))
 			return (square);
-		ft_2dstrdel(todel);
+		ft_2dstrdel(square);
 		size++;
 	}
 	return (NULL);

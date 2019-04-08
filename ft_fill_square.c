@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/02 19:51:31 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/08 20:36:08 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,14 @@ int		ft_reorganize(char **square, char **tetrim, int i, size_t size)
 		while (++tab[1] < size)
 		{
 			if (ft_fill_tetrim(tetrim, square, tab[1], tab[0]))
-			{
-				free(tab);
-				return (1);
-			}
+				return (ft_size_t_del(tab));
 			else
 				ft_clear_tetrim(square, i);
 		}
 		tab[0]++;
 		tab[1] = -1;
 	}
-	free (tab);
+	free(tab);
 	return (0);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 18:27:28 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/04/08 21:11:04 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ int		ft_verif_line_check(char *line)
 	return (0);
 }
 
+void	ft_initialize(size_t *nb_line, size_t *y, size_t *ntetrim)
+{
+	*nb_line = 0;
+	*y = 0;
+	*ntetrim = 0;
+}
+
 int		ft_new_tetrim_check(char ***tet, size_t *ntet, size_t *y)
 {
 	if (*ntet >= 25)
@@ -43,20 +50,19 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 	size_t	nb_line;
 	size_t	ntetrim;
 
-	nb_line = 0;
-	y = 0;
-	ntetrim = 0;
+	ft_initialize(&nb_line, &y, &ntetrim);
 	tetrim[0] = ft_2dstrnew(4);
 	while (++nb_line && get_next_line(fd, &line))
 	{
 		if (!line[0] && nb_line % 5 == 0)
 		{
+			free(line);
 			if (!y || !(ft_new_tetrim_check(tetrim, &ntetrim, &y)))
 				return (0);
 			if (get_next_line(fd, &line))
 				nb_line++;
 		}
-		else if ((!line[0] && nb_line % 5 != 0)
+		if ((!line[0] && nb_line % 5 != 0)
 		|| ft_strlen(line) != 4 || y > 4)
 			return (0);
 		if (ft_verif_line_check(line))

@@ -6,7 +6,7 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:22:12 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 13:54:57 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/08 20:35:21 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ int					ft_sqrt_aprox(int nb);
 void				ft_2dputstr(char **tetrim);
 void				ft_2dstrdel(char **as);
 void				ft_3dstrdel(char ***tetrim);
+int					ft_size_t_del(size_t *as);
 
 #endif
