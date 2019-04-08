@@ -6,7 +6,7 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 13:13:45 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/08 15:17:40 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,17 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 		|| ft_strlen(line) != 4 || y > 4)
 			return (0);
 		if (ft_verif_line_check(line))
-			tetrim[ntetrim][y++] = ft_strdup(line);
+		{
+			if (!(tetrim[ntetrim][y] = (char*)malloc(sizeof(char*) * ft_strlen(line) + 1)))
+				return (0);
+			ft_strcpy(tetrim[ntetrim][y], line);
+			y++;
+		}
 		free(line);
 		ft_putnbr(nb_line);
 		ft_putstr("line : ");
 		ft_putendl(line);
 	}
-	if (line[0])
-		free(line);
-	ft_putnbr(nb_line);
-	ft_putstr("line : ");
-	ft_putendl(line);
+	free(line);
 	return (tetrim[0][0] != NULL && nb_line % 5 == 0 && !line[0] && y > 0);
 }

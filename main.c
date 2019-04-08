@@ -6,7 +6,7 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 13:32:39 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:27:57 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int		main(int argc, char **argv)
 	tetrim_check = ft_3dstrnew(19);
 	if (!(open_files(argv[1], tetrim, tetrim_check)))
 	{
-		ft_3dputstr(tetrim);
 		ft_putendl("error read tetris check");
 		return (0);
 	}
@@ -55,7 +54,7 @@ int		main(int argc, char **argv)
 	square = ft_which_square(tetrim);
 	ft_2dputstr(square);
 	ft_2dstrdel(square);
-	free(tetrim[0]);
+	free(tetrim[0][0]);
 	while (1 == 1)
 		i++;
 	/*char *line;
