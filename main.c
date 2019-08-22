@@ -6,7 +6,7 @@
 /*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 20:46:31 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/08/22 12:02:27 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,13 @@ int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 	int	fd_check;
 	int b;
 
-	fd_check = open("library.fillit", O_RDONLY);
 	fd = open(argv, O_RDONLY);
+	if (fd == -1)
+	{
+		close(fd);
+		return (0);
+	}
+	fd_check = open("library.fillit", O_RDONLY);
 	ft_readtetris_check(fd_check, tetrim_check);
 	close(fd_check);
 	b = ft_readtetris_check(fd, tetrim);
@@ -63,7 +68,7 @@ int		main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_putstr("usage: ./fillit.out target_file");
+		ft_putstr("usage: ./fillit target_file");
 		return (0);
 	}
 	tetrim = ft_3dstrnew(26);
