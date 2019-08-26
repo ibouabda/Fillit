@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
+#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/04/02 17:33:56 by retounsi         ###   ########.fr        #
+#    Updated: 2019/08/24 15:20:04 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 PATHFILE = ./libft
 
-CC = gcc -g
-
-FSANITISE_NAME = fsanitize.out
-
-CC_FSANITISE = gcc -fsanitize=address -g
+CC = gcc
 
 SRC_NAME = get_next_line.c ft_erase_column.c\
 			ft_readtetris_check.c ft_which_square.c\
@@ -29,10 +25,6 @@ SRC_NAME = get_next_line.c ft_erase_column.c\
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 all: $(NAME)
-
-$(FSANITIZE_NAME): .libft $(OBJ_NAME)
-	$(CC_FSANITIVE) -c $(SRC_NAME)
-	$(CC_FSANITISE) -o $(FSANITIZE_NAME) $(OBJ_NAME) libft/libft.a
 
 .libft:
 	make -C $(PATHFILE)
@@ -46,8 +38,8 @@ clean:
 	make clean -C $(PATHFILE)
 
 fclean:
-		rm -f $(OBJ_NAME)
-		rm -f $(NAME)
-		make fclean -C $(PATHFILE)
+	rm -f $(OBJ_NAME)
+	rm -f $(NAME)
+	make fclean -C $(PATHFILE)
 
 re: fclean all
