@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_2dstrnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 16:51:45 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 18:51:26 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/08/26 15:37:02 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	**ft_2dstrnew(size_t size)
 {
@@ -21,7 +20,8 @@ char	**ft_2dstrnew(size_t size)
 	i = 0;
 	if (!(str = (char**)malloc(sizeof(char*) * size + 1)))
 	{
-		return (NULL);
+		ft_putendl("ft_2dstrnew malloc error");
+		exit(EXIT_FAILURE);
 	}
 	while (i < size + 1)
 	{
