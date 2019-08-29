@@ -6,7 +6,7 @@
 #    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/08/24 15:20:04 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/08/29 17:57:20 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,14 @@ SRC_NAME = get_next_line.c ft_erase_column.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
+LIB = $(PATHFILE)/libft.a
+
 all: $(NAME)
 
-.libft:
+$(LIB):
 	make -C $(PATHFILE)
 
-$(NAME): .libft $(OBJ_NAME) libft/libft.a
+$(NAME): $(LIB) $(OBJ_NAME) libft/libft.a
 	$(CC) $(CFLAGS) -c $(SRC_NAME)
 	$(CC) -o $(NAME) $(OBJ_NAME) libft/libft.a
 
