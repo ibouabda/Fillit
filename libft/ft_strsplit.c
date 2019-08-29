@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 17:45:01 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/08/29 13:37:55 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/08/29 18:34:44 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,10 @@ char		**ft_strsplit(char const *str, char c)
 		str2 = ft_strdup(str);
 		j = ft_mesure_index(str2, c);
 		if (!(index = (char **)malloc(sizeof(char *) * (j + 1))))
-			{
-				ft_putendl("ft_lstnewstr malloc error");
-				exit(EXIT_FAILURE);
-			}
+		{
+			ft_putendl("ft_lstnewstr malloc error");
+			exit(EXIT_FAILURE);
+		}
 		index[j] = 0;
 		index = ft_malloc_str(index, str2, c);
 		return (ft_fill_index(index, str2, c));
