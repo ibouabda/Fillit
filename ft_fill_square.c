@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/03 12:08:22 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/03 14:32:37 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_fill_tetrim(char **tetrim, char **square, size_t x, size_t y)
 		x_local = x;
 		while (tetrim[y2][x2])
 		{
-			while (tetrim[y2][x2++] == '.')
+			while (tetrim[y2][x2++] == '.' && square[y][x_local])
 				x_local++;
 			x2--;
 			if (!tetrim[y2][x2])
@@ -73,7 +73,6 @@ char	**ft_fill_square(size_t size, char ***tetrim, char **square)
 	int	i;
 
 	i = 0;
-	
 	while (tetrim[i])
 	{
 		if (ft_reorganize(square, tetrim[i], i, size))
@@ -81,7 +80,7 @@ char	**ft_fill_square(size_t size, char ***tetrim, char **square)
 		else
 			i--;
 		if (i < 0)
-			break;
+			break ;
 	}
 	if (i >= 0)
 		return (square);
