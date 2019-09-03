@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/08/26 14:57:38 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/08/30 12:35:05 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,19 @@ int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 {
 	int	fd;
 	int	fd_check;
+	int fd_dir;
 	int b;
 
 	fd = open(argv, O_RDONLY);
-	if (fd == -1)
+	fd_dir = open(argv, O_DIRECTORY);
+	if (fd == -1 || fd_dir > 0)
 	{
+		printf("LOL\n");
+		close(fd_dir);
 		close(fd);
 		return (0);
 	}
+	close(fd_dir);
 	fd_check = open("library.fillit", O_RDONLY);
 	ft_readtetris_check(fd_check, tetrim_check);
 	close(fd_check);

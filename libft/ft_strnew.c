@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 16:51:45 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/08/29 13:27:57 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/03 11:28:07 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	if (!(str = (char*)malloc(sizeof(char) * size + 1)))
+	if (!(str = (char*)malloc(sizeof(char) * (size + 1))))
 	{
 		ft_putendl("ft_strnew malloc error");
 		exit(EXIT_FAILURE);

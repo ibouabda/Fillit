@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_square.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 14:03:58 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/04/08 20:36:08 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/09/03 12:08:22 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,15 @@ char	**ft_fill_square(size_t size, char ***tetrim, char **square)
 	int	i;
 
 	i = 0;
+	
 	while (tetrim[i])
 	{
 		if (ft_reorganize(square, tetrim[i], i, size))
 			i++;
 		else
 			i--;
+		if (i < 0)
+			break;
 	}
 	if (i >= 0)
 		return (square);

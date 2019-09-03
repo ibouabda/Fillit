@@ -2,6 +2,6 @@
 
 while (true)
 do
-./fillit test_fillit
+./fsanitize test_fillit
 sleep 2
 done
