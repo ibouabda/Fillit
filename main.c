@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 18:25:04 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/09/05 19:31:10 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		ft_exit(char ***tetrim, char ***tetrim_check, int b)
 	ft_3dstrdel(tetrim);
 	if (b == 0)
 		ft_putendl("error");
+	while (1)
+		;
 	return (0);
 }
 
@@ -60,7 +62,6 @@ int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 		close(fd);
 		return (0);
 	}
-	ft_3dputstr(tetrim_check);
 	close(fd);
 	return (b && read_final_return(argv));
 }
@@ -81,7 +82,7 @@ int		main(int argc, char **argv)
 	if (!(open_files(argv[1], tetrim, tetrim_check)))
 		return (ft_exit(tetrim, tetrim_check, 0));
 	ft_erase_column(tetrim);
-	if (!ft_check(tetrim, tetrim_check))
+	if (!ft_check(tetrim_check))
 		return (ft_exit(tetrim, tetrim_check, 0));
 	ft_convert_tetrim(tetrim);
 	square = ft_which_square(tetrim);

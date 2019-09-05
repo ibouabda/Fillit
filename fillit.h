@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 17:16:30 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 18:19:34 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/09/05 19:09:55 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 # define FILLIT_H
 
 # include <fcntl.h>
+# include <stdio.h>
 # include "libft/libft.h"
 
 int		ft_readtetris(int fd, char ***tetrim);
 int		get_next_line(const int fd, char **line);
 void	ft_erase_column(char ***tetrim);
 int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_check);
-int		ft_check(char ***tetrim, char ***tetrim_check);
+int		ft_check(char ***tetrim_c);
 void	ft_convert_tetrim(char ***tetrim);
 char	**ft_fill_square(size_t size, char ***tetrim, char **square);
 char	**ft_which_square(char ***tetrim);
