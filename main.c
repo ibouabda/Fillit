@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 12:18:15 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/05 14:19:03 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int		ft_exit(char ***tetrim, char ***tetrim_check, int b)
 	ft_3dstrdel(tetrim);
 	if (b == 0)
 		ft_putendl("error");
-	while(1);
 	return (0);
 }
 
@@ -60,7 +59,6 @@ int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 	if (!(b = ft_readtetris_check(fd, tetrim)))
 	{
 		close(fd);
-		//ft_putendl("ok");
 		return (0);
 	}
 	fd_check = open("library.fillit", O_RDONLY);
@@ -84,17 +82,11 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	if (!(open_files(argv[1], tetrim, tetrim_check)))
-	{
-		//ft_putendl("ok");
 		return (ft_exit(tetrim, tetrim_check, 0));
-	}
 	ft_erase_column(tetrim);
 	ft_erase_column(tetrim_check);
 	if (!ft_check(tetrim, tetrim_check))
-	{
-		//ft_putendl("ok");
 		return (ft_exit(tetrim, tetrim_check, 0));
-	}
 	ft_convert_tetrim(tetrim);
 	square = ft_which_square(tetrim);
 	ft_2dputstr(square);
