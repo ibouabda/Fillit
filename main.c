@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 17:47:55 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/05 18:25:04 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int		read_final_return(char *argv)
 int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 {
 	int	fd;
-	int	fd_check;
 	int fd_dir;
 	int b;
 
@@ -56,14 +55,12 @@ int		open_files(char *argv, char ***tetrim, char ***tetrim_check)
 		return (0);
 	}
 	close(fd_dir);
-	if (!(b = ft_readtetris_check(fd, tetrim)))
+	if (!(b = ft_readtetris_check(fd, tetrim, tetrim_check)))
 	{
 		close(fd);
 		return (0);
 	}
-	fd_check = open("library.fillit", O_RDONLY);
-	ft_readtetris_check(fd_check, tetrim_check);
-	close(fd_check);
+	ft_3dputstr(tetrim_check);
 	close(fd);
 	return (b && read_final_return(argv));
 }
@@ -84,7 +81,6 @@ int		main(int argc, char **argv)
 	if (!(open_files(argv[1], tetrim, tetrim_check)))
 		return (ft_exit(tetrim, tetrim_check, 0));
 	ft_erase_column(tetrim);
-	ft_erase_column(tetrim_check);
 	if (!ft_check(tetrim, tetrim_check))
 		return (ft_exit(tetrim, tetrim_check, 0));
 	ft_convert_tetrim(tetrim);
