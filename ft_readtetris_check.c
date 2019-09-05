@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 14:19:37 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/05 17:44:05 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ void	ft_initialize(size_t *nb_line, size_t *y, size_t *ntetrim)
 	*ntetrim = 0;
 }
 
-int		ft_new_tetrim_check(char ***tet, size_t *ntet, size_t *y)
+int		ft_new_tetrim_check(char ***tet, char ***tet_c, size_t *ntet, size_t *y)
 {
 	if (*ntet >= 25)
 		return (0);
 	*ntet += 1;
 	tet[*ntet] = ft_2dstrnew(4);
+	tet_c[*ntet] = ft_2dstrnew(4);
 	*y = 0;
 	return (1);
 }
@@ -49,7 +50,7 @@ int		ft_free_return(char *line)
 	return (0);
 }
 
-int		ft_readtetris_check(int fd, char ***tetrim)
+int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_c)
 {
 	char	*line;
 	size_t	y;
@@ -58,19 +59,20 @@ int		ft_readtetris_check(int fd, char ***tetrim)
 
 	ft_initialize(&nb_line, &y, &ntetrim);
 	tetrim[0] = ft_2dstrnew(4);
+	tetrim_c[0] = ft_2dstrnew(4);
 	while (++nb_line && get_next_line(fd, &line))
 	{
 		if (!line[0] && nb_line % 5 == 0)
 		{
 			free(line);
-			if (!y || !(ft_new_tetrim_check(tetrim, &ntetrim, &y)))
+			if (!y || !(ft_new_tetrim_check(tetrim, tetrim_c, &ntetrim, &y)))
 				return (0);
 			if (get_next_line(fd, &line))
 				nb_line++;
 		}
-		if ((!line[0] && nb_line % 5 != 0)
-		|| ft_strlen(line) != 4 || y > 4)
+		if ((!line[0] && nb_line % 5 != 0) || ft_strlen(line) != 4 || y > 4)
 			return (ft_free_return(line));
+		tetrim_c[ntetrim][y] = ft_strdup(line);
 		if (ft_verif_line_check(line))
 			tetrim[ntetrim][y++] = ft_strdup(line);
 		free(line);

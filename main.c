@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 14:19:03 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/05 17:47:55 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		main(int argc, char **argv)
 	char	**square;
 
 	tetrim = ft_3dstrnew(26);
-	tetrim_check = ft_3dstrnew(19);
+	tetrim_check = ft_3dstrnew(26);
 	if (argc != 2)
 	{
 		ft_putendl("usage: ./fillit target_file");
