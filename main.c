@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 19:31:10 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/05 19:47:57 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int		read_final_return(char *argv)
 	int		red;
 	char	*buf;
 
-	buf = ft_strnew(4096);
+	buf = ft_strnew(547); //4096 a la base
 	fd = open(argv, O_RDONLY);
-	red = read(fd, buf, 4096);
+	red = read(fd, buf, 547);//ajouter un while pour le read ?
 	close(fd);
 	if (buf[red - 1] == '\n')
 	{
