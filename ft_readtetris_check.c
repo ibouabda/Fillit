@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/06 12:33:49 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/06 15:54:07 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,7 @@ int		ft_new_tetrim_check(char ***tet, char ***tet_c, size_t *ntet, size_t *y)
 
 int		ft_free_return(char **line)
 {
-	if (*line)
-	{
-		if (*line[0])
-			free(*line);
-	}
+	ft_strdel(line);
 	return (0);
 }
 
@@ -69,17 +65,17 @@ int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_c)
 	{
 		if (nl % 5 == 0 && !line[0])
 		{
-			free(line);
+			ft_strdel(&line);
 			if (!y || !(ft_new_tetrim_check(tetrim, tetrim_c, &ntetrim, &y)))
 				return (0);
 			if ((l = 0) == 0 && get_next_line(fd, &line))
 				nl++;
 		}
-		if ((nl % 5 != 0 && !line[0]) || ft_strlen(line) != 4 || y > 3 || l > 3)
+		if (line && ((nl % 5 != 0 && !line[0]) || ft_strlen(line) != 4 || y > 3 || l > 3))
 			return (ft_free_return(&line));
-		if ((tetrim_c[ntetrim][l++] = ft_strdup(line)) && ft_verif(line))
+		if (line && ((tetrim_c[ntetrim][l++] = ft_strdup(line)) && ft_verif(line)))
 			tetrim[ntetrim][y++] = ft_strdup(line);
-		free(line);
+		ft_strdel(&line);
 	}
 	return (tetrim[0][0] != NULL && nl % 5 == 0 && y > 0);
 }
