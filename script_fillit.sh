@@ -3,5 +3,5 @@
 while (true)
 do
 ./fsanitize test_fillit
-sleep 2
+sleep 1
 done

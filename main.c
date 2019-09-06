@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/06 10:32:49 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/06 12:07:23 by retounsi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_exit(char ***tetrim, char ***tetrim_check, int b)
 	ft_3dstrdel(tetrim);
 	if (b == 0)
 		ft_putendl("error");
-	while(1);
+	while (1);
 	return (0);
 }
 

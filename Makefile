@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
+#    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/09/06 10:30:49 by ibouabda         ###   ########.fr        #
+#    Updated: 2019/09/06 11:04:57 by retounsi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ LIB = $(PATHFILE)/libft.a
 
 all: $(NAME)
 
-$(FSANITISE_NAME): $(LIB)
+$(FSANITISE_NAME): $(LIB) $(OBJ_NAME)
 	$(CC_FSANITISE) -o $(FSANITISE_NAME) $(SRC_NAME) libft/libft.a
 
 $(LIB):
