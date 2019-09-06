@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/06 10:14:26 by retounsi         ###   ########.fr       */
+/*   Updated: 2019/09/06 10:37:47 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,6 @@ int		ft_free_return(char *line)
 {
 	free(line);
 	return (0);
-}
-
-void	ft_initialize_2(char ***tetrim, char ***tetrim_c)
-{
-	tetrim[0] = ft_2dstrnew(4);
-	tetrim_c[0] = ft_2dstrnew(4);
 }
 
 int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_c)

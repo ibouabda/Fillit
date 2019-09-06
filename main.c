@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: idris <idris@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:47:32 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/06 09:21:43 by idris            ###   ########.fr       */
+/*   Updated: 2019/09/06 10:32:49 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		ft_exit(char ***tetrim, char ***tetrim_check, int b)
 	ft_3dstrdel(tetrim);
 	if (b == 0)
 		ft_putendl("error");
+	while(1);
 	return (0);
 }
 
@@ -27,9 +28,9 @@ int		read_final_return(char *argv)
 	int		red;
 	char	*buf;
 
-	buf = ft_strnew(547); //4096 a la base
+	buf = ft_strnew(4096);
 	fd = open(argv, O_RDONLY);
-	red = read(fd, buf, 547);//ajouter un while pour le read ?
+	red = read(fd, buf, 4096);
 	close(fd);
 	if (buf[red - 1] == '\n')
 	{
