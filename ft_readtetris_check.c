@@ -6,7 +6,7 @@
 /*   By: idris <idris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/06 09:31:45 by idris            ###   ########.fr       */
+/*   Updated: 2019/09/06 09:59:45 by idris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ int		ft_free_return(char *line)
 	return (0);
 }
 
+void ft_initialize_2(char ***tetrim, char ***tetrim_c)
+{
+	tetrim[0] = ft_2dstrnew(4);
+	tetrim_c[0] = ft_2dstrnew(4);
+}
 int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_c)
 {
 	char	*line;
@@ -60,17 +65,15 @@ int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_c)
 	size_t	ntetrim;
 
 	ft_initialize(&nb_line, &y, &ntetrim, &l);
-	tetrim[0] = ft_2dstrnew(4);
-	tetrim_c[0] = ft_2dstrnew(4);
+	ft_initialize_2(tetrim, tetrim_c);
 	while (++nb_line && get_next_line(fd, &line))
 	{
 		if (!line[0] && nb_line % 5 == 0)
 		{
 			free(line);
-			l = 0;
 			if (!y || !(ft_new_tetrim_check(tetrim, tetrim_c, &ntetrim, &y)))
 				return (0);
-			if (get_next_line(fd, &line))
+			if ((l = 0) == 0 && get_next_line(fd, &line))
 				nb_line++;
 		}
 		if ((!line[0] && nb_line % 5 != 0) || ft_strlen(line) != 4 || y > 4) // why 4 et l > 4 necessaire ?
