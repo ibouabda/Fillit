@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_erase_column.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idris <idris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 11:53:54 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 19:29:48 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/06 09:23:03 by idris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_shift(char ***tetrim)
 	}
 }
 
-int ft_nbor(char ***tetrim_c, int ntetrim, int y, int x)
+int		ft_nbor(char ***tetrim_c, int ntetrim, int y, int x)
 {
 	int nbor;
 
@@ -82,34 +82,40 @@ int ft_nbor(char ***tetrim_c, int ntetrim, int y, int x)
 	return (nbor);
 }
 
+void	ft_counter(char ***tetrim_c, int ntetrim, int *nbor, int *count)
+{
+	int y;
+	int x;
+
+	y = 0;
+	*nbor = 0;
+	*count = 0;
+	while (tetrim_c[ntetrim][y] && y < 4)
+	{
+		x = 0;
+		while (tetrim_c[ntetrim][y][x] && x < 4)
+		{
+			if (tetrim_c[ntetrim][y][x] == '#')
+			{
+				*nbor += ft_nbor(tetrim_c, ntetrim, y, x);
+				*count = *count + 1;
+			}
+			x++;
+		}
+		y++;
+	}
+}
+
 int		ft_check(char ***tetrim_c)
 {
 	int count;
 	int nbor;
-	int x;
-	int y;
 	int ntetrim;
 
 	ntetrim = 0;
 	while (tetrim_c[ntetrim])
 	{
-		y = 0;
-		nbor = 0;
-		count = 0;
-		while (tetrim_c[ntetrim][y] && y < 4)
-		{
-			x = 0;
-			while (tetrim_c[ntetrim][y][x] && x < 4)
-			{
-				if (tetrim_c[ntetrim][y][x] == '#')
-				{
-					nbor += ft_nbor(tetrim_c, ntetrim, y, x);
-					count++;
-				}
-				x++;
-			}
-			y++;
-		}
+		ft_counter(tetrim_c, ntetrim, &nbor, &count);
 		if (!(nbor >= 6 && count == 4))
 			return (0);
 		ntetrim++;

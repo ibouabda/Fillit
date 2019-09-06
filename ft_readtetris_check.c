@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_readtetris_check.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: idris <idris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 13:29:07 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/05 19:16:57 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/06 09:31:45 by idris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ int		ft_readtetris_check(int fd, char ***tetrim, char ***tetrim_c)
 		if (!line[0] && nb_line % 5 == 0)
 		{
 			free(line);
-			l = 0; //norme
+			l = 0;
 			if (!y || !(ft_new_tetrim_check(tetrim, tetrim_c, &ntetrim, &y)))
 				return (0);
 			if (get_next_line(fd, &line))
 				nb_line++;
 		}
-		if ((!line[0] && nb_line % 5 != 0) || ft_strlen(line) != 4 || y > 4 || l > 4) // why 4 ?
+		if ((!line[0] && nb_line % 5 != 0) || ft_strlen(line) != 4 || y > 4) // why 4 et l > 4 necessaire ?
 			return (ft_free_return(line));
 		tetrim_c[ntetrim][l++] = ft_strdup(line);
 		if (ft_verif_line_check(line))
