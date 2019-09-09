@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: retounsi <retounsi@student.42.fr>          +#+  +:+       +#+         #
+#    By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 17:46:29 by idris             #+#    #+#              #
-#    Updated: 2019/09/06 15:49:22 by retounsi         ###   ########.fr        #
+#    Updated: 2019/09/07 11:57:22 by ibouabda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 PATHFILE = ./libft
 
-CC = gcc -g
-
-FSANITISE_NAME = fsanitize
-
-CC_FSANITISE = gcc -fsanitize=address -g
+CC = gcc
 
 SRC_NAME = get_next_line.c ft_erase_column.c\
 			ft_readtetris_check.c ft_which_square.c\
@@ -31,9 +27,6 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB = $(PATHFILE)/libft.a
 
 all: $(NAME)
-
-$(FSANITISE_NAME): $(LIB) $(OBJ_NAME)
-	$(CC_FSANITISE) -o $(FSANITISE_NAME) $(SRC_NAME) libft/libft.a
 
 $(LIB):
 	make -C $(PATHFILE)

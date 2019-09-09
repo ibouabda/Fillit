@@ -6,7 +6,7 @@
 /*   By: ibouabda <ibouabda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 10:27:27 by ibouabda          #+#    #+#             */
-/*   Updated: 2019/09/06 10:29:50 by ibouabda         ###   ########.fr       */
+/*   Updated: 2019/09/07 14:55:54 by ibouabda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_nbor(char ***tetrim_c, int ntetrim, int y, int x)
 	return (nbor);
 }
 
-void	ft_counter(char ***tetrim_c, int ntetrim, int *nbor, int *count)
+int		ft_counter(char ***tetrim_c, int ntetrim, int *nbor, int *count)
 {
 	int y;
 	int x;
@@ -52,10 +52,13 @@ void	ft_counter(char ***tetrim_c, int ntetrim, int *nbor, int *count)
 				*nbor += ft_nbor(tetrim_c, ntetrim, y, x);
 				*count = *count + 1;
 			}
+			else if (tetrim_c[ntetrim][y][x] != '.')
+				return (0);
 			x++;
 		}
 		y++;
 	}
+	return (1);
 }
 
 int		ft_check(char ***tetrim_c)
@@ -67,7 +70,8 @@ int		ft_check(char ***tetrim_c)
 	ntetrim = 0;
 	while (tetrim_c[ntetrim])
 	{
-		ft_counter(tetrim_c, ntetrim, &nbor, &count);
+		if (!(ft_counter(tetrim_c, ntetrim, &nbor, &count)))
+			return (0);
 		if (!(nbor >= 6 && count == 4))
 			return (0);
 		ntetrim++;
