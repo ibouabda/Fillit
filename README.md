@@ -10,4 +10,4 @@ Pour le lancer : `make && ./fillit test`
 
 ![Exec](https://github.com/ibouabda/Fillit/blob/master/pics/Exec.png)
 
-Le fichier test est modulable a votre guise tant que vous lui donné des tetriminos correct.
+Le fichier test est modulable a votre guise tant que vous lui donnez des tetriminos correct.
